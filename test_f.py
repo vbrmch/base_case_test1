@@ -1,5 +1,6 @@
 import time
 
+import allure
 from seleniumbase import BaseCase
 import pytest
 from behave import step
@@ -10,6 +11,7 @@ class test_ca(BaseCase):
     login_field = "//*[@id='email']"
     password_field = "//*[@id='password']"
 
+    @allure.title("test for login")
     def test_swag_labs(self):
         self.open("https://aimaidhelp.com/login")
         self.type(self.login_field, text='vburmich@apro.ai')
